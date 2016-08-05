@@ -1,6 +1,7 @@
 package id.nusantari;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -48,18 +49,15 @@ public class MainActivity extends AppCompatActivity {
         data4.putInt("drawable",R.drawable.koreo);
         file_maps.add(data4);
 
-
         for(Bundle data : file_maps){
 
             SliderDescriptionView sliderView = new SliderDescriptionView(this);
             // initialize a SliderLayout
-//            TextSliderView sliderView = new TextSliderView(this);
             sliderView
                     .title(data.getString("title"))
                     .description(data.getString("description"))
                     .image(data.getInt("drawable"))
                     .setScaleType(BaseSliderView.ScaleType.Fit);
-//                    .setOnSliderClickListener(this);
 
             slider.addSlider(sliderView);
         }
@@ -103,6 +101,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showPamirso(View v){
-
+        startActivity(new Intent(this,PamirsoActivity.class));
     }
 }
