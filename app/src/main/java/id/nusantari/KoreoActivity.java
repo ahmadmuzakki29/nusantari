@@ -45,7 +45,7 @@ public class KoreoActivity extends DetailTabActivity implements OnMapReadyCallba
     @Override
     protected View getTabView(int i, ViewGroup parent, Bundle savedInstanceState) {
         if(i==0){
-            return null;
+            return getLayoutInflater().inflate(R.layout.koreo_chalenge,null);
         }else if(i==1){
             return getMap(parent,savedInstanceState);
         }else{
