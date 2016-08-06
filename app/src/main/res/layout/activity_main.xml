@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="15dp"
-            android:textSize="35dp"
+            android:textSize="25dp"
             android:text="PAMIRSO"
             android:textColor="@android:color/white"
             android:layout_alignParentBottom="true"
@@ -40,12 +40,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="35dp"
+                android:textSize="25dp"
                 android:text="SATRIO"
                 android:textColor="@android:color/white"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="0dp" android:layout_weight="1" android:onClick="showKoreo"
@@ -55,12 +56,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="35dp"
+                android:textSize="25dp"
                 android:text="KOREO"
                 android:textColor="@android:color/white"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="18dp" />
         </RelativeLayout>
     </LinearLayout>
 

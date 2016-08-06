@@ -35,5 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button"
         android:background="@android:color/holo_green_dark"
-        android:textColor="@color/cardview_light_background" />
+        android:textColor="@color/cardview_light_background"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
 </LinearLayout>
