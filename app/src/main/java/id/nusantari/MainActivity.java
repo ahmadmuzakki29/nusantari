@@ -103,4 +103,6 @@ public class MainActivity extends AppCompatActivity {
     public void showPamirso(View v){
         startActivity(new Intent(this,PamirsoActivity.class));
     }
+
+    public void showSatrio(View v){startActivity(new Intent(this,SatrioActivity.class));}
 }

@@ -31,7 +31,6 @@ public class PamirsoActivity extends DetailTabActivity {
         super.onStart();
         setCoverImage(BitmapFactory.decodeResource(getResources(),R.drawable.belajar));
         setTitleSubtitle("PAMIRSO","asdf");
-
     }
 
     @Override

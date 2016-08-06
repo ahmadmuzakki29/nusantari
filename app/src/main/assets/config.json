@@ -1,25 +1,33 @@
 {
   "host":"http://www.example.com",
   "db_name":"nusantari.db",
-  "db_version":1,
+  "db_version":2,
   "db_tables":{
-      "pamirso_challenge":{
-        "creator":"create table pamirso_challenge(id integer primary key autoincrement,title text,description text,picture text)",
-        "init_value":[
-          "insert into pamirso_challenge values(null,'Tari Merak','lorem ipsums',null)",
-          "insert into pamirso_challenge values(null,'Tari Piring','lorem ipsum',null)",
-          "insert into pamirso_challenge values(null,'Tari Kecak','lorem ipsum',null)",
-          "insert into pamirso_challenge values(null,'Tari Jaipong','lorem ipsum',null)"
-        ]
-      },
+    "pamirso_challenge":{
+      "creator":"create table pamirso_challenge(id integer primary key autoincrement,title text,description text,picture text)",
+      "init_value":[
+        "insert into pamirso_challenge values(null,'Tari Merak','lorem ipsums',null)",
+        "insert into pamirso_challenge values(null,'Tari Piring','lorem ipsum',null)",
+        "insert into pamirso_challenge values(null,'Tari Kecak','lorem ipsum',null)",
+        "insert into pamirso_challenge values(null,'Tari Jaipong','lorem ipsum',null)"
+      ]
+    },
     "top_score":{
       "creator":"create table top_score(id integer primary key autoincrement,nama text, point text,picture text)",
       "init_value":[
         "insert into top_score values(null,'Arda Surya','3000',null)",
         "insert into top_score values(null,'Ahmad Muzakki','2000',null)"
       ]
+    },
+    "best_picture":{
+      "creator":"create table best_picture(id integer primary key autoincrement, title text, nama text, picture text)",
+      "init_value":[
+        "insert into best_picture values(null,'Tari jaipong','Arda Surya',null)",
+        "insert into best_picture values(null,'Tari merak','Ahmad Muzakki',null)",
+        "insert into best_picture values(null,'Tari kecak','Arda Surya',null)"
+      ]
     }
   },
-  "db_reset_table":["top_score"]
+  "db_reset_table":["best_picture"]
 
 }
