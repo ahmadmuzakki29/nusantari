@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Bundle> file_maps = new ArrayList<>();
         Bundle data1 = new Bundle();
         data1.putString("title","Selamat Datang");
-        data1.putString("description","Eksplorasi budaya tari Indonesia dengan cara yang menyenangkan");
+        data1.putString("description","tes budaya tari Indonesia dengan cara yang menyenangkan");
         data1.putInt("drawable",R.drawable.tarian);
         file_maps.add(data1);
 
