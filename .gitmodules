@@ -1,9 +1,6 @@
 [submodule "android-material"]
 	path = android-material
 	url = https://github.com/ahmadmuzakki29/android-material
-[submodule "android-lib"]
-	path = android-lib
-	url = https://github.com/ahmadmuzakki29/android-lib
 [submodule "android-helper"]
 	path = android-helper
 	url = https://github.com/ahmadmuzakki29/android-helper
