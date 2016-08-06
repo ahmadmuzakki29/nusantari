@@ -1,7 +1,7 @@
 {
   "host":"http://www.example.com",
   "db_name":"nusantari.db",
-  "db_version":1,
+  "db_version":3,
   "db_tables":{
       "pamirso_challenge":{
         "creator":"create table pamirso_challenge(id integer primary key autoincrement,title text,description text,picture text)",
@@ -20,6 +20,6 @@
       ]
     }
   },
-  "db_reset_table":["top_score"]
+  "db_reset_table":["pamirso_challenge"]
 
 }
