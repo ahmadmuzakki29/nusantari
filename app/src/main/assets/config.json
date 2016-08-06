@@ -18,8 +18,16 @@
         "insert into top_score values(null,'Arda Surya','3000',null)",
         "insert into top_score values(null,'Ahmad Muzakki','2000',null)"
       ]
+    },
+    "best_picture":{
+      "creator":"create table best_picture(id integer primary key autoincrement, title text, nama text, picture text)",
+      "init_value":[
+        "insert into best_picture values(null,'Tari jaipong','Arda Surya',null)",
+        "insert into best_picture values(null,'Tari merak','Ahmad Muzakki',null)",
+        "insert into best_picture values(null,'Tari kecak','Arda Surya',null)"
+      ]
     }
   },
-  "db_reset_table":["pamirso_challenge"]
+  "db_reset_table":["best_picture"]
 
 }

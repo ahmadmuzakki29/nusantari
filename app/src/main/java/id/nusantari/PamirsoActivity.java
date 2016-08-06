@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.muzakki.ahmad.material.detail.DetailTabActivity;
@@ -31,7 +32,6 @@ public class PamirsoActivity extends DetailTabActivity {
         super.onStart();
         setCoverImage(BitmapFactory.decodeResource(getResources(),R.drawable.belajar));
         setTitleSubtitle("PAMIRSO","asdf");
-
     }
 
     @Override
@@ -48,7 +48,7 @@ public class PamirsoActivity extends DetailTabActivity {
     }
 
     @Override
-    protected View getTabView(int i) {
+    protected View getTabView(int i, ViewGroup parent, Bundle savedInstanceState) {
         if(i==0) {
             if (challenge == null) {
                 challenge = new ChallengeList(this);
