@@ -105,4 +105,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showSatrio(View v){startActivity(new Intent(this,SatrioActivity.class));}
+
+    public void showKoreo(View v){ startActivity(new Intent(this,KoreoActivity.class));}
 }

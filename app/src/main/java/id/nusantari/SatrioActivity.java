@@ -48,7 +48,7 @@ public class SatrioActivity extends DetailTabActivity {
     }
 
     @Override
-    protected View getTabView(int i) {
+    protected View getTabView(int i, ViewGroup parent, Bundle savedInstanceState) {
         if(i==0) {
             if (challenge == null) {
                 challenge = new Challenge(this, fields, Form.SaveType.LOCAL, Form.Action.ADD, null);
