@@ -6,9 +6,9 @@
       "pamirso_challenge":{
         "creator":"create table pamirso_challenge(id integer primary key autoincrement,title text,description text,picture text)",
         "init_value":[
-          "insert into pamirso_challenge values(null,'Tari Merak','lorem ipsums',null)",
-          "insert into pamirso_challenge values(null,'Tari Piring','lorem ipsum',null)",
-          "insert into pamirso_challenge values(null,'Tari Kecak','lorem ipsum',null)",
+          "insert into pamirso_challenge values(null,'Tari Merak','Tari Merak adalah sebuah kesenian tari asal jawa barat dimana tarian ini sudah ada sejak zaman hindu budha.',null)",
+          "insert into pamirso_challenge values(null,'Tari Piring','Tari Piring merupakan kesenian tari yang berasal daari daerah padang. Dalam tarian ini penari membawa piring sebagai aksesoris tariannya',null)",
+          "insert into pamirso_challenge values(null,'Tari Kecak','Tari Kecak ini adalah tarian khas bali dimana tarian ini membutuhkan banyak orang untuk melakukan tari ini..',null)",
           "insert into pamirso_challenge values(null,'Tari Jaipong','lorem ipsum',null)"
         ]
       },
