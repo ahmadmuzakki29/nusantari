@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -48,18 +49,20 @@ public class SatrioActivity extends DetailTabActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        menu.clear();
+        return true;
+    }
+
+    @Override
     protected View getTabView(int i, ViewGroup parent, Bundle savedInstanceState) {
         if(i==0) {
-            if (challenge == null) {
+            if (challenge == null)
                 challenge = new Challenge(this, fields, Form.SaveType.LOCAL, Form.Action.ADD, null);
-                challenge.render();
-            }
             return challenge;
         }else{
-            if(topscore==null) {
-                topscore = new TopScore(this);
-                topscore.render();
-            }
+            if(topscore==null)  topscore = new TopScore(this);
             return topscore;
         }
     }

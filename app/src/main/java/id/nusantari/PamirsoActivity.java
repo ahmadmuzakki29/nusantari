@@ -44,22 +44,18 @@ public class PamirsoActivity extends DetailTabActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
+        super.onCreateOptionsMenu(menu);
+        menu.clear();
+        return true;
     }
 
     @Override
     protected View getTabView(int i, ViewGroup parent, Bundle savedInstanceState) {
         if(i==0) {
-            if (challenge == null) {
-                challenge = new ChallengeList(this);
-                challenge.render();
-            }
+            if (challenge == null) challenge = new ChallengeList(this);
             return challenge;
         }else{
-            if(top_score==null){
-                top_score = new TopScoreList(this);
-                top_score.render();
-            }
+            if(top_score==null) top_score = new TopScoreList(this);
             return top_score;
         }
     }
