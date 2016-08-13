@@ -1,29 +1,33 @@
 package id.nusantari;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.muzakki.ahmad.material.detail.DetailFragment;
 import com.muzakki.ahmad.material.detail.DetailTabActivity;
 import com.muzakki.ahmad.material.list.ListLocal;
 import com.muzakki.ahmad.material.list.ListViewHolder;
 import com.muzakki.ahmad.material.list.RowView;
+import com.muzakki.ahmad.material.map.MapLocal;
 
 import java.util.ArrayList;
 
-public class KoreoActivity extends DetailTabActivity implements OnMapReadyCallback {
-
+public class KoreoActivity extends DetailTabActivity{
+    private final LatLng jakarta = new LatLng(-6.1745,106.8227);
     private TopScoreList top;
     private Bundle mapInstance;
+    private MapSanggar map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,14 @@ public class KoreoActivity extends DetailTabActivity implements OnMapReadyCallba
         if(i==0){
             return getLayoutInflater().inflate(R.layout.koreo_chalenge,null);
         }else if(i==1){
-            return getMap(parent,savedInstanceState);
+            mapInstance = savedInstanceState;
+            if(map==null){
+                map = new MapSanggar(this);
+                map.setCameraPosition(new CameraPosition.Builder().target(jakarta)
+                        .zoom(13)
+                        .build());
+            }
+            return map;
         }else{
             if(top==null) top = new TopScoreList(this);
             return top;
@@ -72,26 +83,12 @@ public class KoreoActivity extends DetailTabActivity implements OnMapReadyCallba
             @Override
             public void render(int position, View layout) {
                 if(position==1) {
-                    MapView map = (MapView) layout.findViewById(R.id.map);
-                    map.onCreate(mapInstance);
-                    map.onResume();
-
-                    try {
-                        MapsInitializer.initialize(KoreoActivity.this);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    map.getMapAsync(KoreoActivity.this);
+                    map.render(mapInstance);
                 }
             }
         };
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-
-    }
 
     private class TopScoreList extends ListLocal{
 
@@ -117,9 +114,28 @@ public class KoreoActivity extends DetailTabActivity implements OnMapReadyCallba
         }
     }
 
-    private View getMap(ViewGroup parent, Bundle savedInstanceState){
-        View view = getLayoutInflater().inflate(R.layout.koreo_lokasi_sanggar, null);
-        mapInstance = savedInstanceState;
-        return view;
+    private class MapSanggar extends MapLocal{
+
+        public MapSanggar(Context context) {
+            super(context);
+        }
+
+        @Override
+        protected String getTable() {
+            return "sanggar";
+        }
+
+        @Override
+        protected MarkerOptions getMarkerOptions(Bundle data) {
+            MarkerOptions opt = new MarkerOptions();
+            Log.i("jeki","lat:"+data.getString("latitude"));
+            opt.position(new LatLng(Double.parseDouble(data.getString("latitude")),
+                    Double.parseDouble(data.getString("longitude"))));
+            opt.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+            opt.title(data.getString("nama"));
+            opt.snippet(data.getString("alamat"));
+            return opt;
+        }
     }
+
 }
