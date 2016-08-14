@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +78,7 @@ public class PamirsoActivity extends DetailTabActivity {
                     switch(Integer.parseInt(row.getString("id"))){
                         case 1:default: res=R.drawable.tarimerak;break;
                         case 2: res = R.drawable.taripiring;break;
-                        case 3: res=R.drawable.tarikecak;break;
+                        case 3: res=R.drawable.koreo;break;
                     }
 
                     getIcon().setImageBitmap(BitmapFactory.decodeResource(getResources(),res));
@@ -94,7 +93,8 @@ public class PamirsoActivity extends DetailTabActivity {
 
         @Override
         public void onListClick(Bundle data) {
-            Intent intent = new Intent(PamirsoActivity.this, taripendet.class);
+            Intent intent = new Intent(PamirsoActivity.this, SoalActivity.class);
+            intent.putExtra("id",Integer.parseInt(data.getString("id")));
             startActivity(intent);
         }
     }
