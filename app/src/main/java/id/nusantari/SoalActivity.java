@@ -9,7 +9,7 @@ import android.webkit.WebView;
  * Created by W1064 on 12/08/2016.
  */
 
-public class taripendet extends Activity {
+public class SoalActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
